@@ -1,0 +1,46 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    /* background-color: #333; */
+    background: linear-gradient(45deg, rgb(44, 169, 162), rgb(173, 52, 34));
+    background-repeat: no-repeat;
+    margin: 100px;
+    padding: 100px;
+  }
+  
+  .board {
+    width:800px;
+    height: 600px;
+    display: inline-block;
+    margin: 20px;
+  }
+  .tile {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #040404;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    cursor: pointer;
+    /* Default color for unrevealed tiles */
+    background-color: #5e1074;
+  
+    /* Default color for unrevealed tile text */
+    color: #551e4a;
+  }
+  #myButton{
+    margin: 25px;
+  }
+  .revealed {
+    /* Color for revealed tiles */
+    background-color: #944b4b;
+  
+    /* Color for revealed tile text */
+    color: #000;
+  }
+  .mine {
+    /* Color for mines */
+    background-color: #ff3333;
+  }
