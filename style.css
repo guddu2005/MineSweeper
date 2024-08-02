@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     /* background-color: #333; */
-    background: linear-gradient(45deg, rgb(44, 169, 162), rgb(173, 52, 34));
+    background: linear-gradient(-75deg, rgb(169, 44, 148), rgb(34, 173, 154));
     background-repeat: no-repeat;
     margin: 100px;
     padding: 100px;
@@ -25,7 +25,7 @@ body {
     font-size: 20px;
     cursor: pointer;
     /* Default color for unrevealed tiles */
-    background-color: #5e1074;
+    background-color:white;
   
     /* Default color for unrevealed tile text */
     color: #551e4a;
@@ -35,7 +35,7 @@ body {
   }
   .revealed {
     /* Color for revealed tiles */
-    background-color: #944b4b;
+    background-color:rgb(88, 110, 88);
   
     /* Color for revealed tile text */
     color: #000;
@@ -52,7 +52,7 @@ body {
 
     .board {
         width: calc(100%-10px);
-        height: fit-content;
+        height: calc(100%-5px);
         /* margin: 10px; */
     }
 
