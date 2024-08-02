@@ -1,68 +1,86 @@
-
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    /* background-color: #333; */
-    background: linear-gradient(-75deg, rgb(169, 44, 148), rgb(34, 173, 154));
-    background-repeat: no-repeat;
-    margin: 100px;
-    padding: 100px;
-  }
-  
-  .board {
-    width:800px;
-    height: 600px;
-    display: inline-block;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  /* background-color: #333; */
+  background: linear-gradient(-75deg, rgb(169, 44, 148), rgb(34, 173, 154));
+  background-repeat: no-repeat;
+  margin: 100px;
+  padding: 100px;
+}
+.revealed {
+  background-color: white;
+}
+.bomb {
+  color: red;
+}
+.board {
+  width: 800px;
+  height: 600px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.tile {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #040404;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  cursor: pointer;
+  /* Default color for unrevealed tiles */
+  background-color: white;
+
+  /* Default color for unrevealed tile text */
+  color: #551e4a;
+}
+
+#myButton {
+  margin: 25px;
+}
+
+.revealed {
+  /* Color for revealed tiles */
+  background-color: rgb(88, 110, 88);
+
+  /* Color for revealed tile text */
+  color: #000;
+}
+
+.marked {
+  background-color: red;
+  color: white;
+}
+.highlighted {
+  background-color: yellow;
+  /* Change this to the color you want */
+}
+
+.mine {
+  /* Color for mines */
+  background-color: #ff3333;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
     margin: 20px;
+    padding: 20px;
   }
+
+  .board {
+    width: calc(100%-10px);
+    height: calc(100%-5px);
+    /* margin: 10px; */
+  }
+
   .tile {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #040404;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 20px;
-    cursor: pointer;
-    /* Default color for unrevealed tiles */
-    background-color:white;
-  
-    /* Default color for unrevealed tile text */
-    color: #551e4a;
+    width: 9%;
+    height: 20px;
+    font-size: 16px;
   }
-  #myButton{
-    margin: 25px;
-  }
-  .revealed {
-    /* Color for revealed tiles */
-    background-color:rgb(88, 110, 88);
-  
-    /* Color for revealed tile text */
-    color: #000;
-  }
-  .mine {
-    /* Color for mines */
-    background-color: #ff3333;
-  }
-  @media only screen and (max-width: 600px) {
-    body {
-        margin: 20px;
-        padding: 20px;
-    }
 
-    .board {
-        width: calc(100%-10px);
-        height: calc(100%-5px);
-        /* margin: 10px; */
-    }
-
-    .tile {
-        width: 9%;
-        height: 20px;
-        font-size: 16px;
-    }
-
-    #myButton {
-        margin: 15px;
-    }
+  #myButton {
+    margin: 15px;
+  }
 }

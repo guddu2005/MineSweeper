@@ -10,7 +10,8 @@ function initializeBoard() {
             board[row][col] = {
                 isMine: false,
                 isRevealed: false,
-                count: 0
+                count: 0,
+                isMarked: false
             }
         }
     }
@@ -59,6 +60,8 @@ function render() {
         for (let col = 0; col < NumCols; col++) {
             const tile = document.createElement("div")
             tile.className = "tile";
+            tile.dataset.row = row;
+            tile.dataset.col = col;
             if (board[row][col].isRevealed) {
 
                 tile.classList.add("revealed");
@@ -70,8 +73,10 @@ function render() {
                     tile.innerText = board[row][col].count;
                 }
             }
-
-
+            if (board[row][col].isMarked && !board[row][col].isRevealed) {
+                tile.classList.add("marked");
+                tile.innerText = '🚩'; 
+            }
 
             tile.addEventListener('click', () => revealTime(row, col));
             gameBoard.appendChild(tile);
@@ -85,7 +90,7 @@ function revealTime(row, col) {
     if (
         row >= 0 && row < NumRows &&
         col >= 0 && col < NumCols &&
-        !board[row][col].isRevealed
+        !board[row][col].isRevealed&& !board[row][col].isMarked
     ) {
         board[row][col].isRevealed = true;
 
@@ -105,6 +110,26 @@ function revealTime(row, col) {
         render();
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const boardElement = document.getElementById('game-board');
+
+    boardElement.addEventListener('contextmenu', (event) => {
+        event.preventDefault(); // Prevent the context menu from appearing
+
+        const tile = event.target;
+        
+        if (tile.classList.contains('tile')) {
+            const row = parseInt(tile.dataset.row, 10);
+            const col = parseInt(tile.dataset.col, 10);
+
+            // Toggle marked state
+            board[row][col].isMarked = !board[row][col].isMarked;
+            
+            render(); // Re-render the board to show the updated state
+        }
+    });
+});
 initializeBoard();
 render();
 document.getElementById('myButton').addEventListener('click', reset);
@@ -123,6 +148,9 @@ function reset() {
 document.getElementById('myButton').addEventListener('click', function () {
 
 });
+function markMine() {
+
+}
 
 function getRandomColor() {
     const letters = 'abcdef';
