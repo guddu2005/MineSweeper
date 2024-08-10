@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MineSweeper</title>
+    <title>Minesweeper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <h2 id="message"></h2>
-    <h1>MineSweeper💣</h1>
-    <div id="game-board"></div>
-    <button id="myButton">ReStart</button>
+    <div id="minesweeper-container">
+        <div id="header">
+            <div id="title-bar">
+                <span id="title-text">Minesweeper</span>
+            </div>
+            <div id="menu-bar">
+                <span class="menu-item">Game</span>
+                <span class="menu-item">Help</span>
+            </div>
+            <div id="status-bar">
+                <div id="mines-left" class="status-display">010</div>
+                <div id="reset-button">
+                    <span id="smiley">😊</span>
+                </div>
+                <div id="time-elapsed" class="status-display">000</div>
+            </div>
+        </div>
+        <h2 id="message"></h2>
+        <div id="game-board"></div>
+        <button id="myButton">Restart</button>
+    </div>
+
+   <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
